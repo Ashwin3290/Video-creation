@@ -1,12 +1,23 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { DimReduction, TOTAL_FRAMES } from "./DimReduction";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* ── Instagram Reel: Dimensionality Reduction ── */}
+      <Composition
+        id="DimReduction"
+        component={DimReduction}
+        durationInFrames={TOTAL_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
       <Composition
         // You can take the "id" to render a video:
         // npx remotion render HelloWorld
